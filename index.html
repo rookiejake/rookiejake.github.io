@@ -1,245 +1,132 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Rocket Jump</title>
-        <link rel ="icon" type ="image/x-icon" href="./assets/favicon.png">
-
-        <!-- the following says there are javascript source code contained in 
-             the external source files
-        -->
-        <!-- external library -->
-        <script type="text/javascript" src="src/lib/gl-matrix.js"></script>
-
-        <!-- Engine code -->
-        <!-- Core of Engine --> 
-        <script type="text/javascript" src="src/Engine/Core/Engine_Core.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Engine_VertexBuffer.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Engine_GameLoop.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Engine_Input.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Engine_ParticleSystem.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Engine_LayerManager.js"></script>
-        <!-- Resource support -->
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_ResourceMap.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_TextFileLoader.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_DefaultResources.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_AudioClips.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_Textures.js"></script>
-        <script type="text/javascript" src="src/Engine/Core/Resources/Engine_Fonts.js"></script>
-        <script type="text/javascript" src="src/Engine/Scene.js"></script>
-        <script type="text/javascript" src="src/Engine/Material.js"></script>
-        <!--Lights -->
-        <script type="text/javascript" src="src/Engine/Lights/Light.js"></script>
-        <script type="text/javascript" src="src/Engine/Lights/LightSet.js"></script>
-        <!-- Utilities -->
-        <script type="text/javascript" src="src/Engine/Utils/ParseJSON.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/Transform.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/BoundingBox.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/Interpolate.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/InterpolateVec2.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/LoadingIconConfig.js"></script>
-        <script type="text/javascript" src="src/Engine/Utils/ShakePosition.js"></script>
-        <!-- Renderables -->
-        <script type="text/javascript" src="src/Engine/Renderables/Renderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/TextureRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/TextureRenderable_PixelCollision.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/SpriteRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/SpriteRenderable_PixelCollision.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/SpriteAnimateRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/FontRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/LineRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/LightRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/IllumRenderable.js"></script>
-        <script type="text/javascript" src="src/Engine/Renderables/ParticleRenderable.js"></script>
-        <!-- Shadows -->
-        <script type="text/javascript" src="src/Engine/Shadows/ShadowCaster.js"></script>
-        <script type="text/javascript" src="src/Engine/Shadows/ShadowReceiver.js"></script>
-        <script type="text/javascript" src="src/Engine/Shadows/ShadowReceiver_Stencil.js"></script>
-        <!-- GameObject -->
-        <script type="text/javascript" src="src/Engine/GameObjects/GameObject.js"></script>
-        <script type="text/javascript" src="src/Engine/GameObjects/GameObject_PixelCollision.js"></script>
-        <script type="text/javascript" src="src/Engine/GameObjects/GameObjectSet.js"></script>
-        <script type="text/javascript" src="src/Engine/GameObjects/TiledGameObject.js"></script>
-        <script type="text/javascript" src="src/Engine/GameObjects/ParallaxGameObject.js"></script>
-        <!-- Particles -->
-        <script type="text/javascript" src="src/Engine/Particles/Particle.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleGameObject.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleGameObjectSet.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleEmitter.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleSystems/ParticleSystem.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleSystems/Fire.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleSystems/Smoke.js"></script>
-        <script type="text/javascript" src="src/Engine/Particles/ParticleSystems/Snow.js"></script>
-        <!-- Shaders -->
-        <script type="text/javascript" src="src/Engine/Shaders/SimpleShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/TextureShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/SpriteShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/LineShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/LightShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/ShaderLightAtIndex.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/IllumShader.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/ShaderMaterial.js"></script>
-        <script type="text/javascript" src="src/Engine/Shaders/ShadowCasterShader.js"></script>
-        <!-- Camera -->
-        <script type="text/javascript" src="src/Engine/Cameras/Camera.js"></script>
-        <script type="text/javascript" src="src/Engine/Cameras/Camera_Manipulation.js"></script>
-        <script type="text/javascript" src="src/Engine/Cameras/Camera_Input.js"></script>
-        <script type="text/javascript" src="src/Engine/Cameras/Camera_Xform.js"></script>
-        <script type="text/javascript" src="src/Engine/Cameras/CameraState.js"></script>
-        <script type="text/javascript" src="src/Engine/Cameras/CameraShake.js"></script>
-        
-        <!-- Physics support -->
-        <script type="text/javascript" src="src/Engine/Core/Engine_Physics.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidShape.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidCircle.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidRectangle.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/CollisionInfo.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidCircle_Collision.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidRectangleCircle_Collision.js"></script>
-        <script type="text/javascript" src="src/Engine/RigidShapes/RigidRectangle_Collision.js"></script>
-        
-        <!-- UI -->
-        <script type="text/javascript" src="src/Engine/UI/UIElement.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIText.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UITexture.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UISprite.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIButton.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIRadio.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIRButton.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIHealthBar.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UITextBoxFont.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UITextBox.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIDropDown.js"></script>
-        <script type="text/javascript" src="src/Engine/UI/UIDDButton.js"></script>
-        
-        <!-- Client game code -->
-        <script type="text/javascript" src="src/MyGame/MainMenu.js"></script>
-        <script type="text/javascript" src="src/MyGame/WinScreen.js"></script>
-        <script type="text/javascript" src="src/MyGame/Easy.js"></script>
-        <script type="text/javascript" src="src/MyGame/Medium.js"></script>
-        <script type="text/javascript" src="src/MyGame/Hard.js"></script>
-        <script type="text/javascript" src="src/MyGame/VeryHard.js"></script>
-        <script type="text/javascript" src="src/MyGame/LongJump.js"></script>
-        <script type="text/javascript" src="src/MyGame/SlowMissiles.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Arena.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/WASDObj.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Minion.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Rocket.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Explosion.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Flag.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Spike.js"></script>
-        <script type="text/javascript" src="src/MyGame/Objects/Lights.js"></script>
-        
-        
-           
-<link rel="stylesheet" type="text/css" href="LoadingIcons.css">
-        
-    </head>
-
-    <body onload="
-        var myGame = new MainMenu();
-        gEngine.Core.initializeEngineCore('GLCanvas', myGame);
-     ">
-        <div id="LoadingIconParent" style="width: 800px; height:600px; margin-left: 200px; margin-top: 75px;">
-                <canvas id="GLCanvas">
-        <!-- GLCanvas is the area we will draw in: a 640x480 area. -->
-        Your browser does not support the HTML5 canvas.
-        <!-- this message will show only if WebGL clearing failed -->
-        </canvas>
-        <script type="text/javascript"> gEngine.LoadingIconConfig.setup(); </script>
+<div class="line"></div>
+<div class="wrapper">
+  <header role="banner">
+    <nav role="navigation">
+      <h1><a href="#">Asperion</a></h1>
+      <ul class="nav-ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Technologies</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="sec-intro" role="section">
+      <img src="https://www.techweekeurope.co.uk/wp-content/uploads/2012/07/wifimountaindownload.jpg" alt="" />
+      <h1>Be Innovative!</h1>
+    </section>
+    <section class="sec-boxes" role="section">
+      <adrticle class="box">
+        <h1>Open-minded</h1>
+        <p>Every option should be explored and tried no matter how unpredictable, impossible, insane or ridiculous does it looks or sound.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h1>Creative</h1>
+        <p>Brainstorming, idea generation, playing sessions, note taking. You think you used everything? We will challenge your mind and its abilities to the limits.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h1>Bold</h1>
+        <p>Our methods and ideas are are not written or following any books, curriculums or rules. We consider ourselves rebels and we are proud of it.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+      <adrticle class="box">
+        <h1>Smart</h1>
+        <p>Every project with innovation as a goal requires smart approach. Identify real problem first and look for the smartest and simplest solution later.</p>
+        <button class="button" type="button" role="button" value="MORE">More</button>
+      </adrticle>
+    </section>
+    <section class="sec-events" role="section">
+      <hr />
+      <h1>Upcomming events</h1>
+      <article>
+        <h1>Tire Technology Expo</h1>
+        <p>Tire Technology Expo has grown in strength and stature every year since it was started in Europe 15 years ago. Visitors and exhibitors to the conference and exhibition staged in February 2014 universally praised it as the 'world's leading tire design and tire manufacturing event', noting in particular the outstanding quality of the conference papers and speakers, and the comprehensive extent of machinery manufacturers and suppliers who exhibited at the event.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>Meteorology World Expo</h1>
+        <p>Meteorological Technology World Expo is a truly international exhibition of the very latest climate, weather and hydro - meteorological forecasting, measurement and analysis technologies and service providers for a global community of key decision makers within the aviation industry, shipping companies, marine / port installations, airports, military operations, off-shore exploration companies, wind farm operators, met offices, agriculture operations and research institutes.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>Wearable Tech Expo</h1>
+        <p>See live demos, listen to case studies, speak with Wearable Tech Experts The first Wearable Tech Expo in Tokyo 2014. Key players from Japan, America and Europe announced their new products and attracted attention from all over the world. The next Wearable Tech Expo in Tokyo will be doubling in size and include Robotics and IoT. The main players in the wearable industry, human factor engineers, brain scientists, media providers and creators will discuss the future of wearable technology! </p>
+        <a class="link" href="#">more...</a>
+      </article>
+      <article>
+        <h1>Space Tech Expo</h1>
+        <p>Space Tech Expo is the West Coast's premier B2B space event for spacecraft, satellite, launch vehicle and space-related technologies. Taking place in Long Beach, the Space Tech Expo exhibition and conference brings together global decision-makers involved in the design, build and testing of spacecraft, satellite, launch vehicle and space-related technologies. Leading the West Coast space and satellite industry, Space Tech Expo is where end-users connect with solution providers.</p>
+        <a class="link" href="#">more...</a>
+      </article>
+    </section>
+    <section class="sec-projects" role="section">
+      <hr />
+      <h1>Previous Projects</h1>
+      <article>
+        <h1>Neural network for Google</h1>
+        <p>People from Google approached us this January with offer to create new neural network for whole Google's ecosystem. This idea was very interesting and looked almost impossible at first glance. However, our engineers proved their expertise and built amazing autonomous platform. <a class="link" href="#">more...</a></p>
+      </article>
+      <article>
+        <h1>Faster operating system for Apple</h1>
+        <p>For a years, since founding days of a company, Apple always worked with its own operating system. In October, this was about to change. Our company got chance to rewrite the history by creating brand new OS for Apple. It was very difficult and all our employees worked hard every day. <a class="link" href="#">more...</a></p>
+      </article>
+      <article>
+        <h1>Manufacturing technology for Intel</h1>
+        <p>Intel has been manufacturing company for many years. They always used the latest technologies to achieve the best results with lowest costs. However, this was not enough. Intel decided to offer us something that could disrupt whole technology sector. <a class="link" href="#">more...</a></p>
+      </article>
+    </section>
+    <section class="sec-standards" role="section">
+      <hr />
+      <h1>Our Standards</h1>
+      <article>
+        <h1>Excellence</h1>
+        <p>Our goal is to give our customers the best solutions in highest aquality. Our employees strive for excellence and work hard to achieve it. Everything must work and be reliable. Great design must be both, aesthetic and functional. Product or service that pass these conditions will be everlasting.</p>
+      </article>
+      <article>
+        <h1>Uniqueness</h1>
+        <p>Our mantra is to create new paths. We are not interested in copying others because we know, that if you want to succeed, you have to be different, unique. Our customers know that we create unique products and experience for them. This is the best way to differentiate us and our brand from the noise on market. Unique, different and proud.</p>
+      </article>
+    </section>
+    <section class="sec-partners" role="section">
+      <hr />
+      <h1>Our Partners</h1>
+      <div class="row">
+        <div class="logo-container">
+          <img src="https://i.imgur.com/oSriTuP.png" alt="Google logo" />
         </div>
-        <div id="particle" style="display: none">
-            <div>Use Left/Right buttons to select which object to manipulate</div>
-        <table>
-          <tr>
-            <th>Controls</th>
-            <th>Description</th> 
-            <th>Value</th>
-          </tr>
-          <tr>
-            <td>Q/W</td>
-            <td>Width of the object +/-</td>
-            <td><bdi id="value1"></bdi></td>
-          </tr>
-          <tr>
-            <td>A/S</td>
-            <td>Vertical Acceleration of Particles +/-</td>
-            <td><bdi id="value2"></bdi></td>
-          </tr>
-          <tr>
-              <td>Z/X</td>
-              <td>Life of the Particles +/-</td>
-              <td><bdi id="value3"></bdi></td>
-          </tr>
-          <tr>
-            <td>E/R</td>
-            <td>Setting the Horizontal initial boost of the Particles +/-</td>
-            <td><bdi id="value4"></bdi></td>
-          </tr>
-          <tr>
-            <td>D/F</td>
-            <td>Setting the Vertical initial boost of the Particles +/-</td>
-            <td><bdi id="value5"></bdi></td>
-          </tr>
-          <tr>
-            <td>C/V</td>
-            <td>What the particle size is multiplied by every update +/-</td>
-            <td><bdi id="value6"></bdi></td>
-          </tr>
-          <tr>
-            <td>T/Y</td>
-            <td>How many particles are spawned per update cycle +/-</td>
-            <td><bdi id="value7"></bdi></td>
-          </tr>
-          <tr>
-            <td>G/H</td>
-            <td>Horizontal Acceleration of the Particles +/-</td>
-            <td><bdi id="value8"></bdi></td>
-          </tr>
-          <tr>
-            <td>B/N</td>
-            <td>The size of the Particles +/-</td>
-            <td><bdi id="value9"></bdi></td>
-          </tr>
-          <tr>
-            <td>U/I</td>
-            <td>The Maximum Vertical Offset of the Particles +/-</td>
-            <td><bdi id="value10"></bdi></td>
-          </tr>
-        </table>
+        <div class="logo-container">
+          <img src="https://i.imgur.com/kRgvevC.png" alt="Apple logo" />
         </div>
-        <div id="physics" style="display: none">
-            <div style="display: table" >
-            <div style="float: left; padding-left: 10px">
-                <b>Behavior Controls:</b>
-                <ul>
-                    <li>
-                        <b>WASD</b>: Move Character </li>
-                    <li>
-                        <b>Left Click</b>: Launch Rocket Toward Mouse </li>
-                </ul>
-            </div>
-            <table style="float: right">
-              <tr>
-                  <th colspan='2'>Selected RigidBody Physics Values</th>
-              </tr>
-              <tr>
-                <th>Description</th> 
-                <th>Value</th>
-              </tr>
-              <tr>
-                <td>Mass</td>
-                <td><bdi id="value11"></bdi></td>
-              </tr>
-              <tr>
-                <td>Restitution</td>
-                <td><bdi id="value12"></bdi></td>
-              </tr>
-              <tr>
-                  <td>Friction</td>
-                  <td><bdi id="value13"></bdi></td>
-              </tr>
-            </table>
+        <div class="logo-container">
+          <img src="https://i.imgur.com/ZZjeIP3.png" alt="Wii logo" />
         </div>
-            </div>
-     </body>
-</html>
+        <div class="logo-container">
+          <img src="https://i.imgur.com/536rtCW.png" alt="Valve logo" />
+        </div>
+        <div class="logo-container">
+          <img src="https://i.imgur.com/VTq1c9p.png" alt="Adithya Institute of Technology logo" />
+        </div>
+        <div class="logo-container">
+          <img src="https://i.imgur.com/GdYoyxo.png" alt="Intel logo" />
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<footer>
+  <nav role="navigation">
+    <ul class="nav-ul">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Technologies</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </nav>
+  <p class="copy">&copy; Alex Devero Design 2014</p>
+</footer>
+<div class="line"></div>
