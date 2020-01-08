@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<!-- created by MiyuKimura on May10, 2017 -->
+<!-- Additions, formatting, and comments by Ben Clark, June 2018-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cross Reality Collaboration Sandbox</title>
+    <!-- Used to load in common html files used across the website. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#page-footer").load("../../modules/footer.html");
+            $("#page-top").load("../../modules/page-top.html");
+        });
+    </script>
+</head>
+
+<body class="page-aboutpage-">
+    <div id="page" class="hfeed site">
+        <div id="page-top"></div>
+
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <h2 class="entry-title">Vulkan API Project</h2>
+                    <h5 style="text-align:right;">By Anjal Doshi</h5>
+                    <h5 style="text-align:right;">Ongoing, Winter 2019</h5>
+
+                    <h4>Introduction</h4>
+                    <p>Computer Graphics is about the creation and manipulation of digital visual content. It supports
+                        applications in fields such as computational biology, physics, simulation, designing, video
+                        games, etc. Vulkan is a high-performance, cross-platform 3D graphics API designed for modern
+                        GPU pipeline. It follows an object-based API concept with graphics state information being
+                        localised to a command buffer [1]. Vulkan is an explicit API. That is, almost everything is the
+                        programmer’s responsibility. This is in contrast to the older APIs such as OpenGL where system
+                        drivers would track the state of many objects, manage memory and synchronization, and check for
+                        errors in the application as it ran. While the older system provides convenience for the
+                        developers, it also generate significant overhead for the CPU [2]. Vulkan addresses this by
+                        placing the responsibilities of almost all state tracking, synchronization, and memory
+                        management into the hands of the application developer. This approach is more efficient where
+                        the driver does not have to perform tasks behind the scenes to manage resources. As a result,
+                        system job processing is streamlined, and straightforward, resulting in optimal performance and
+                        predictable behavior [3]. </p>
+                    <p>
+                        Unfortunately, the added responsibilities and the associated the sophistication in the
+                        underlying architecture mean that the Vulkan API can be a significant hurdle for new users.
+                        This is especially challenging as it is a fairly new API with no significant community help.
+                    </p>
+
+                    <div style="clear: both">
+                        <iframe src="https://drive.google.com/file/d/1a7Lkl2WEMY5BwIMXXt8nhc7I5HFnBKbK/preview" width="1280"
+                            height="720"></iframe>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <!-- Adds the page footer -->
+        <div id="page-footer" class="footer-wrap clear "></div>
+    </div>
+</body>
+
+</html>
