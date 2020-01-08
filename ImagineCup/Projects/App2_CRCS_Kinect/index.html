@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<!-- created by MiyuKimura on May10, 2017 -->
+<!-- Additions, formatting, and comments by Ben Clark, June 2018-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cross Reality Collaboration Sandbox</title>
+    <!-- Used to load in common html files used across the website. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#page-footer").load("../../modules/footer.html");
+            $("#page-top").load("../../modules/page-top.html");
+        });
+    </script>
+</head>
+<body class="page-aboutpage-">
+    <div id="page" class="hfeed site">
+        <div id="page-top"></div>
+
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <h2 class="entry-title">Cross Reality Collaboration via the Kinect</h2>
+                    <h5 style="text-align:right;">By Roman, Trayce</h5>
+                    <h5 style="text-align:right;">December 2017</h5>
+                    <img class="alignright"
+                         src="https://drive.google.com/uc?id=1349-vVZJdBKGJ-n0kGOWzi7Um3ks09YW"
+                         alt="20170508_141121_HoloLens" width="367" height="207" />
+                    <p>
+                        Our project is aims to build the ground work for Kinect integration
+                        into the Cross Reality Collaboration Sandbox. We are working to build
+                        a set of intuitive controls and systems that will allow users to jump
+                        right in and start interacting within the digital space.
+                    </p>
+                    <p>
+                        The Kinect offers a unique challenge in creating a user interaction that is
+                        intuitive and easy to use. When a user enters the Kinect Camera space, a
+                        Skelton is generated for the user that accurately tracks hand and head within
+                        the 3D space. The limitation comes from the user not being able to leave the
+                        camera space, so all user interactions are limited to the field of view of the
+                        Kinect. The user interface for the project was designed with this in mind and
+                        allows the user to complete more complex tasks using a gesture controls. A
+                        cursor is mapped to each hand and detects when the user closes their hand as
+                        interaction point with the Interface. Future user interfaces will be able to
+                        use this as a guideline for designing the way they want the user to interact
+                        with the system. In the future, we would like the system to support voice
+                        controls and full body gesture recognition
+                    </p>
+                    <p>
+                        Another limitation presented by the Kinect is that it lacks the ability to
+                        navigate around larger environment. A positional UI was designed around this
+                        idea and what we had designed with the user interface gesture controls. The
+                        Positional UI offers 3 unique camera perspectives that show the world from
+                        above, in front of, and to the side of the user. From here the user can grab
+                        themselves, the camera, or the environment and move it relative to the hand
+                        movement. If the user grabs themselves or the camera and them grabs the
+                        environment with the other hand, they are able to rotate the object relative
+                        to the movement of the hand. Last interaction is the user is able to zoom
+                        in and out by grabbing the environment with both hands similar to a pinch
+                        zoom feature you find on smart phones
+                    </p>
+                    <img class="alignnone"
+                         src="https://drive.google.com/uc?id=1JUGBbTu-FJVaEw9qHiRommOAK0DshhuU"
+                         alt="Partially_Shaded_Room" width="661" height="327" />
+                </main>
+            </div>
+        </div>
+        <!-- Adds the page footer -->
+        <div id="page-footer" class="footer-wrap clear "></div>
+    </div>
+</body>
+</html>

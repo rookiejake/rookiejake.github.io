@@ -1,0 +1,13 @@
+/*  
+    Project-specific theme and settings while using VS Code
+    Made by Joe V. (joev@uw.edu)
+*/
+
+{
+    "workbench.colorCustomizations": {
+        "titleBar.border": "#005266",
+        "titleBar.activeBackground": "#422a68",
+        "titleBar.inactiveBackground": "#1b1b1b"
+    },
+    "html.format.enable": true,
+}
