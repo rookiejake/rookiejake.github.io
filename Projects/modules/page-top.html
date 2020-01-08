@@ -1,0 +1,105 @@
+<!-- Link to get Bootstrap and Custom Stylehsheet for the website-->
+<link rel='stylesheet' id='all-css-0-1' href='./modules/css/custom-styling.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--Add some styling to the top bar-->
+<style type="text/css">
+    .site-content {
+        margin-top: 2em;
+    }
+
+    summary {
+        font-family: "Quattrocento", serif;
+        font-weight: bold;
+        font-style: normal;
+        color: #666;
+        text-rendering: optimizeLegibility;
+        margin-top: 0.375em;
+        margin-bottom: .75em;
+        font-size: 2.8rem;
+    }
+
+    #main {
+        margin-right: 0%;
+    }
+
+    .header-bg {
+        background-image: url(https://drive.google.com/uc?id=1OxcIz_QmRvVS_xf_7inAP8F-0gdmbbOa);
+        background-repeat: no-repeat;
+    }
+
+
+    @media screen and (min-width: 50em) {
+        .header-bg {
+            background-attachment: scroll;
+            background-position: center;
+        }
+    }
+
+    #img-tabbed {
+        /*margin-left: 50px;*/
+        transform: translateX(50px)
+    }
+</style>
+
+
+<!-- Adds the nav bar -->
+<header id="masthead" class="site-header" role="banner">
+    <!-- Adds in the top bar -->
+    <div id="top-bar" class="header-bg site-branding">
+        <h1 style="color:black">Cross Reality Collaboration Sandbox</h1>
+        <h3 style="color:black">Research Group</h3>
+    </div>
+    <div id="navbar" class="stick">
+        <nav class="main-navigation">
+            <ul>
+                <li><a href="/2019.CRCS-WebSite/">Home</a></li>
+                <li><a href="/2019.CRCS-WebSite/Projects">Projects</a></li>
+                <li><a href="/2019.CRCS-WebSite/ImagineCup">Imagine Cup</a></li>
+                <li><a href="/2019.CRCS-WebSite/Publications">Publications</a></li>
+                <li><a href="/2019.CRCS-WebSite/Documentation">Documentation</a></li>
+                <li><a href="/2019.CRCS-WebSite/Dissemination">Dissemination</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<header id="masthead-mobile" class="site-header mobile" role="banner">
+    <div id="top-bar" class="header-bg site-branding">
+        <h1 style="color:black">CRCS</h1>
+        <div class="burger container" onclick="menuVisibility()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div id="navbar" class="stick">
+        <nav class="main-navigation" id='navlist'>
+            <ul>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/">Home</a></button>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/Projects">Projects</a></button>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/ImagineCup">ImagineCup</a></button>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/Publications">Publications</a></button>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/Documentation">Documentation</a></button>
+                <button type="button" class="btn btn-info">
+                    <a href="/2019.CRCS-WebSite/Dissemination">Dissemination</a></button>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    function menuVisibility() {
+        let visibility = document.getElementById('navlist').style.display == 'unset' ?
+            'disable' :
+            'enable'
+
+        document.getElementById('navlist').style.display = visibility == 'enable' ? 'unset' : 'none'
+    }
+</script>
