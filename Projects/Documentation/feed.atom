@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="/ASL" />
+	<id>/ASL</id>
+	<title>Summer 2018 ASL Documentation</title>
+	<rights>2018</rights>
+	<updated>2018-08-23T16:50:51Z</updated>
+</feed>
