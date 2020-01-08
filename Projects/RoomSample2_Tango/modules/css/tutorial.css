@@ -1,0 +1,17 @@
+.image_step {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.image_step p {
+    float: left;
+}
+
+
+.image_step img {
+    float: right;
+    height: 100%;
+    max-height: 300px;
+    margin-top: 1em;
+}
