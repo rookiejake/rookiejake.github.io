@@ -68,12 +68,12 @@ iframe {
 
 .site-footer {
     background-color: rgba(135, 206, 235, 0.658);
-    display: inline-flex;
+    display: flex;
 }
 
 .site-footer * {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
 
     text-align: center;
 }
