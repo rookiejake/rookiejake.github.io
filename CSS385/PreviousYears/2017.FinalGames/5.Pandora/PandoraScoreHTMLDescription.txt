@@ -1,0 +1,70 @@
+ <tr>
+		<td align="center" style="text-align:left;">
+			<img width="200" src="https://i.imgur.com/MmA8cqa.png"><br>
+ 
+			<b>Pandora's Score Team:</b><br>
+			Andrue Cashman<br>
+			Christopher Lynn<br>
+			Trayce Luxtrum<br>
+			Weizong Zhou<br><br>
+ 
+	<b>Art</b><br>
+            <a href="http://untamed.wild-refuge.net/rpgxp.php">Sithjester’s RMXP Resources </a><br>
+            <a href="http://powstudios.com/content/fire-animation-pack-1">Title screen fire by Pow Studios </a><br>
+            <a href="https://opengameart.org/content/free-ui-asset-pack-1">UI elements by CTatz </a><br>
+            <a href="https://opengameart.org/content/jrpg-chests-16-32-64-and-128px-squared">Wooden chest by Daniel Cook </a><br>
+            <a href="https://opengameart.org/content/gold-treasure-icons">Treasure by Clint Bellanger </a>
+            <br> <br>
+ 
+            <b>Audio from FreeSound.org</b><br>
+            
+           <a href="http://www.freesound.org/people/cylon8472/">cylon8472 - Monster</a><br>
+           <a href="http://www.freesound.org/people/carrigsound/"> carrigsound - Footsteps</a><br>
+           <a href="http://www.freesound.org/people/Giaboom/"> Giaboom - Footsteps</a><br>
+           <a href="http://www.freesound.org/people/GabrielAraujo/">GabrielAraujo - Powerup-Success </a><br>
+           <a href="http://www.freesound.org/people/sophiehall3535/"> sophiehall3535 - Grab Item</a><br>
+           <a href="http://www.freesound.org/people/PhilSavlem/"> PhilSavlem - Money Sound</a><br>
+           <a href="http://www.freesound.org/people/JoelAudio/">JoelAudio - Monster Roar </a><br>
+           <a href="http://www.freesound.org/people/Tuudurt/">Tuudurt - Victory Music</a><br>
+           <a href="http://www.freesound.org/people/undead505/">undead505 - End screen music</a><br>
+           <br>
+          <b>Music and Additional Sound</b><br>
+           <a href="https://archive.org/details/EerieCreepyAndScaryMusicForYourScoresDvds">Kevin McLoed - Background Music </a>
+          <br>
+ 		  <a href="http://www.sonniss.com/gameaudiogdc2017/">Sonniss GDC 2017 Audio Pack - Soundbits </a><br>
+          <br>
+           <b>Special Thanks</b><br>
+           <a href="https://audiotrimmer.com/">Audio Trimmer </a><br>
+           <a href="https://www.youtube.com/watch?v=5RzziXSwSsg">quill18creates' Tutorials </a><br>
+           <a href="https://www.youtube.com/watch?v=0HwZQt94uHQ">Brackey's Tutorials</a><br>
+           <a href="https://www.youtube.com/watch?v=evKIf6edQ_g">Unity Tutorials</a><br>
+ 
+		</td>
+		<td>
+            <br>
+			<p><b><u>House on Pandora Avenue</u></b></p>
+			<p>House on Pandora Avenue is a puzzle-stealth-horror game.</p>
+			<p>The player must navigate through a randomly generated maze, looting the rooms, all while avoiding a monster. Find all the keys in order to escape the house with your loot! And don't get caught.</p>
+ 
+			<p>
+				<a href="https://drive.google.com/file/d/0B2NP1p50OQOObzY5bjk5NFY0aG8/view?usp=sharing">Download Game (PC) 
+					<br>
+				<a href="https://drive.google.com/file/d/0B2NP1p50OQOOMFM2ZjVYVlhUU2s/view?usp=sharing">Download Game (Mac) 
+					<br>
+				<a href="https://drive.google.com/file/d/0B2NP1p50OQOOWDBfZWRVOWJ3YUU/view?usp=sharing">Download Game Proposal 
+					<br>
+				<a href="https://docs.google.com/document/d/18qJawg1oY8vII1MQy0a2taCCHifE1nhpYwUVKl8Lg5s/edit?usp=sharing">Download Design Document
+                  <br>
+					
+			</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/jE3yazA3fcI?rel=0" frameborder="0" allowfullscreen></iframe>
+                  <br>
+			<img width="150" src="https://i.imgur.com/xml9blL.png" border="0">
+			<img width="150" src="https://i.imgur.com/jXsM6IV.png" border="0">
+			<img width="150" src="https://i.imgur.com/pz0eRih.png" border="0">
+			<img width="150" src="https://i.imgur.com/mOTtBd9.png" border="0">
+			<img width="150" src="https://i.imgur.com/mCOXinU.png" border="0">
+			<img width="150" src="https://i.imgur.com/QQUT1V9.png" border="0">
+		</td>
+	</tr>
+ 
