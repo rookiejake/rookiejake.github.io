@@ -1,5 +1,0 @@
-AuthType Shibboleth
-ShibCompatWith24 on 
-ShibRequireSession on
-ShibRequestSetting redirectToSSL 443
-require valid-user
